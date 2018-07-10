@@ -6,12 +6,26 @@
   </div>
 </template>
 <script>
-// import { mapState, mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   data () {
     return {
     }
+  },
+  computed: {
+    ...mapGetters('news', [
+      'News'
+    ])
+  },
+  methods: {
+    ...mapActions('news', [
+      'getNews',
+      'clearNews'
+    ])
+  },
+  mounted () {
+    this.getNews()
   }
 }
 </script>

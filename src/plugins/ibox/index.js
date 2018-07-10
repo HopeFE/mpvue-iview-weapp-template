@@ -1,5 +1,5 @@
 // iBoxPlugin
-import handleRequest from '@/store/flyio/request'
+// import handleRequest from '@/store/flyio/request'
 import utils from './utils'
 
 export default {
@@ -10,8 +10,8 @@ export default {
    */
   install (Vue) {
     const iBox = {
-      ...utils,
-      http: handleRequest
+      ...utils
+      // http: handleRequest
     }
 
     Vue.iBox = iBox

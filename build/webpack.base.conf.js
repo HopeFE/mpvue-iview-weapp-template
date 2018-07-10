@@ -24,8 +24,7 @@ module.exports = {
     alias: {
       'vue': 'mpvue',
       '@': resolve('src'),
-      'axios':'axios/dist/axios',
-      'flyio': 'flyio/dist/npm/wx',
+      'axios':'axios/dist/axios'
     },
     symlinks: false
   },
