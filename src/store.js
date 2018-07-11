@@ -1,12 +1,15 @@
-// https://vuex.vuejs.org/zh-cn/intro.html
-// make sure to call Vue.use(Vuex) if using a module system
 import Vue from 'vue'
 import Vuex from 'vuex'
+import common from '@/common/store'
+import createLogger from 'vuex/dist/logger'
 import news from '@/pages/news/modules/store'
 
 Vue.use(Vuex)
-const store = new Vuex.Store({})
+const store = new Vuex.Store({
+  // Log集成
+  plugins: [createLogger()]
+})
 
+store.registerModule('common', common)
 store.registerModule('news', news)
-// Vue.prototype.$store = store
 export default store

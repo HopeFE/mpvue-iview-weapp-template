@@ -7,7 +7,7 @@ let Pattern = {
   isUserName: /^[(\u4e00-\u9fa5)a-zA-Z]+$/,
   isPassword: /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}$/,
   isAuthCode: /^[0-9]{6}$/,
-  isTelAndMobile: /^(1[3|4|5|7|8][\d]{9}|0[\d]{2,3}-[\d]{7,8}|400[-]?[\d]{3}[-]?[\d]{4})$/,
+  isTelAndMobile: /^(1[3|4|5|7|8][\d]{9}|0[\d]{2,3}-[\d]{7,8}|400[-]?[\d]{3}[-]?[\d]{4})$/
 }
 
 const validator = {
@@ -17,24 +17,24 @@ const validator = {
    * @param strValue 校验的值
    * @returns {boolean}
    */
-  executeExp: function (pattern, strValue) {
-    return pattern.test(strValue);
+  executeExp: (pattern, strValue) => {
+    return pattern.test(strValue)
   },
   /**
    * 判断字符串是否为空
    * @param strValue 校验的值
    * @returns {boolean}
    */
-  isEmpty: function (strValue) {
-    strValue = strValue.replace(Pattern.isEmpty, '');
-    return strValue.length == 0;
+  isEmpty: (strValue) => {
+    strValue = strValue.replace(Pattern.isEmpty, '')
+    return strValue.length === 0
   },
   /**
    * 判断字符串是否非空
    * @param strValue 校验的值
    * @returns {boolean}
    */
-  isNotEmpty: function (strValue) {
+  isNotEmpty: (strValue) => {
     return !this.isEmpty(strValue)
   },
   /**
@@ -42,73 +42,56 @@ const validator = {
    * @param strValue 校验的值
    * @returns {boolean}
    */
-  isCnAndEn: function (strValue) {
-    if (this.isEmpty(strValue))
-      return false;
-
-    return this.executeExp(Pattern.isCnAndEn, strValue);
+  isCnAndEn: (strValue) => {
+    return (this.isEmpty(strValue) ? false : this.executeExp(Pattern.isCnAndEn, strValue))
   },
   /**
    * 判断是否为中英文、数字及'-'
    * @param strValue 校验的值
    * @returns {boolean}
    */
-  isCnAndEnAndNum: function (strValue) {
-    if (this.isEmpty(strValue))
-      return false;
-
-    return this.executeExp(Pattern.isCnAndEnAndNum, strValue);
+  isCnAndEnAndNum: (strValue) => {
+    return (this.isEmpty(strValue) ? false : this.executeExp(Pattern.isCnAndEnAndNum, strValue))
   },
   /**
    * 判断是否为用户名
    * @param strValue 校验的值
    * @returns {boolean}
    */
-  isUserName: function (strValue) {
-    if (this.isEmpty(strValue))
-      return false;
-
-    return this.executeExp(Pattern.isUserName, strValue);
+  isUserName: (strValue) => {
+    return (this.isEmpty(strValue) ? false : this.executeExp(Pattern.isUserName, strValue))
   },
   /**
    * 判断验证码格式
    * @param strValue 校验的值
    * @returns {boolean}
    */
-  isAuthCode: function (strValue) {
-    if (this.isEmpty(strValue))
-      return false;
-    return this.executeExp(Pattern.isAuthCode, strValue);
+  isAuthCode: (strValue) => {
+    return (this.isEmpty(strValue) ? false : this.executeExp(Pattern.isAuthCode, strValue))
   },
   /**
    * 判断是否为手机号码
    * @param strValue 校验的值
    * @returns {boolean}
    */
-  isMobile: function (strValue) {
-    if (this.isEmpty(strValue))
-      return false;
-    return this.executeExp(Pattern.isMobile, strValue);
+  isMobile: (strValue) => {
+    return (this.isEmpty(strValue) ? false : this.executeExp(Pattern.isMobile, strValue))
   },
   /**
    * 判断是否为手机或电话号码
    * @param strValue 校验的值
    * @returns {boolean}
    */
-  isTelAndMobile: function (strValue) {
-    if (this.isEmpty(strValue))
-      return false;
-    return this.executeExp(Pattern.isTelAndMobile, strValue);
+  isTelAndMobile: (strValue) => {
+    return (this.isEmpty(strValue) ? false : this.executeExp(Pattern.isTelAndMobile, strValue))
   },
   /**
    * 判断是否符合密码规则
    * @param strValue 校验的值
    * @returns {boolean}
    */
-  isPassword: function (strValue) {
-    if (this.isEmpty(strValue))
-      return false;
-    return this.executeExp(Pattern.isPassword, strValue);
+  isPassword: (strValue) => {
+    return (this.isEmpty(strValue) ? false : this.executeExp(Pattern.isPassword, strValue))
   },
   /**
    * 对象是否为空

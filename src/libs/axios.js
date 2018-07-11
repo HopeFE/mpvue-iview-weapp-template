@@ -10,8 +10,8 @@ switch (process.env.NODE_ENV) {
     axios.defaults.baseURL = 'https://hn.algolia.com/api/v1/'; break
 }
 
-console.log()
 axios.defaults.adapter = (config) => {
+  console.log(config)
   return new Promise((resolve, reject) => {
     wx.request({
       url: `${config.url}`,

@@ -1,6 +1,17 @@
 <script>
 export default {
-  mpType: 'app'
+  mpType: 'app',
+  onLaunch () {
+    // 掉网的提示
+    wx.onNetworkStatusChange((res) => {
+      if (!res.isConnected) {
+        wx.showToast({
+          title: '请检查网络连接',
+          icon: 'none'
+        })
+      }
+    })
+  }
 }
 </script>
 

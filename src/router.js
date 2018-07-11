@@ -8,7 +8,8 @@ module.exports = [
         'i-row': '../../static/iview/row/index',
         'i-cell': '../../static/iview/cell/index',
         'i-col': '../../static/iview/col/index',
-        'i-button': '../../static/iview/button/index'
+        'i-button': '../../static/iview/button/index',
+        'i-spin': '../../static/iview/spin/index'
       }
     }
   }

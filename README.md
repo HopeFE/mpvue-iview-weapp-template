@@ -4,6 +4,16 @@
 
 ## 使用前必读
 
+### 必读文档
+
+- [微信公众平台](https://mweixin.qq.com/)
+
+- [小程序API文档](https://developers.weixin.qq.com/miniprogram/introduction/index.html?t=201879)
+
+- [使用 Vue.js 开发小程序的前端框架 - mpvue](http://mpvue.com/)
+
+- [微信小程序 UI 组件库 - iviewui](https://weapp.iviewui.com/?from=iview)
+
 ### 环境准备
 ```
 安装Node.js > 8
@@ -13,10 +23,6 @@ npm install -g @vue/cli
 # OR
 yarn global add @vue/cli
 ```
-### 调试工具
-
-- [Vuetron](https://github.com/vuetwo/vuetron)
-
 ### 推荐IDE
 
 - [VSCODE](https://code.visualstudio.com/)
@@ -31,6 +37,8 @@ yarn global add @vue/cli
 
 - [language-stylus](https://marketplace.visualstudio.com/items?itemName=sysoev.language-stylus)
 
+- [mpvue-snippets](https://marketplace.visualstudio.com/items?itemName=banxi.mpvue-snippets)
+
 ### JS风格指南
 
 - [JavaScript Standard Style](https://standardjs.com/rules-zhcn.html)
@@ -38,8 +46,6 @@ yarn global add @vue/cli
 ### Vue风格指南
 
 - [style-guide](https://youzan.github.io/vant/#/zh-CN/style-guide)
-
-- [eslint-plugin-vue](https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules)
 
 ## Main Javascript Framework
 
@@ -61,7 +67,7 @@ yarn global add @vue/cli
 
 ### 配置优化
 
-- PX自动转换REM(默认16px = 1rem)[postcss-pxtorem](https://github.com/cuth/postcss-pxtorem)
+- px自动转换rpx(默认1px = 2rpx)[px2rpx-loader](https://github.com/cuth/postcss-pxtorem)
 ``` css
 // 重要！！
 min-height: 55Px; /* px不转成rem*/
@@ -79,7 +85,6 @@ min-height: 55Px; /* px不转成rem*/
   ├── pages         # 页面
     ├── modules       # 逻辑层
     ├── pages         # 视图层
-    ├── router.js     # 路由
   ├── app.vue     # 入口页面
   ├── router      # 主路由
   ├── store.js    # Store
@@ -106,10 +111,10 @@ open Files in DistT Folder
 
 ## TODO
 1. 自动注入route
-2. 常用filter
+2. 自动注入store
 3. 使用Vue-cli3.0
+4. 更多的公共数据转换（时间，金额等等）
 
 # 坑
-
 1.[vue文件中不能缺少script标签](https://github.com/Meituan-Dianping/mpvue/issues/562)，否则会导致编译不了。
 
