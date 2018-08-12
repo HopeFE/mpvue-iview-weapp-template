@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <view>
     <i-panel class="cell-panel-demo">
       <i-cell
         v-for="(item, index) in News.list" :key="index"
@@ -7,7 +7,7 @@
       />
     </i-panel>
     <i-spin :wx:if="spinShow" size="large" fix></i-spin>
-  </div>
+  </view>
 </template>
 <script>
 import { mapActions, mapGetters } from 'vuex'

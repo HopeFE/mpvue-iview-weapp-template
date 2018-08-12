@@ -4,6 +4,7 @@ module.exports = [
     config: {
       navigationBarTitleText: '新闻',
       usingComponents: {
+        'skeleton': '/component/skeleton/skeleton',
         'i-panel': '../../static/iview/panel/index',
         'i-row': '../../static/iview/row/index',
         'i-cell': '../../static/iview/cell/index',

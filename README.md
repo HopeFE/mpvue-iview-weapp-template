@@ -106,11 +106,6 @@ npm/yarn run dev
 从微信开发者工具中引入DIST项目文件
 ```
 
-## TODO
-1. 自动注入route
-2. 自动注入store
-3. 使用Vue-cli3.0
-4. 更多的公共数据转换（时间，金额等等）
 
 # 坑
 1.[vue文件中不能缺少script标签](https://github.com/Meituan-Dianping/mpvue/issues/562)，否则会导致编译不了。
